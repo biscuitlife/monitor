@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>test</title>
+</head>
+<body>
+<script>
+    window.onerror = function () {
+        console.log('我是页面中绑定的window.onerror');
+    }
+</script>
+<script src="../src/exception.js"></script>
+<script src="./test.js"></script>
+<script src="../src/performance.js"></script>
+<script>
+    function test() {
+        try {
+            document.getElementById('xxx').value;
+        } catch (e) {
+            window.badjs.report(e);
+        }
+    }
+
+    test();
+</script>
+</body>
+</html>
